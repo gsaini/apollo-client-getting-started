@@ -1,17 +1,17 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import EXCHANGE_RATES from './gql';
+import {GET_BOOKS} from '../Books/gql';
 
 export default function ExchangeRates() {
-  const { loading, error, data } = useQuery(EXCHANGE_RATES);
+  const { loading, error, data } = useQuery(GET_BOOKS);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.rates.map(({ currency, rate }) => (
-    <div key={currency}>
+  return data.books.map(({ title, author }) => (
+    <div key={title}>
       <p>
-        {currency}: {rate}
+        {title}: {author}
       </p>
     </div>
   ));

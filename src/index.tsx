@@ -5,11 +5,32 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import client from './apollo/client';
+import Books from './components/Books';
+import Todos from './components/Todos';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 ReactDOM.render(
   <ApolloProvider client={client}>
     <React.StrictMode>
-      <App />
+      <Router>
+      <Switch>
+        
+        <Route path="/books">
+          <Books />
+        </Route>
+        <Route path="/todos">
+          <Todos />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+      </Router>
     </React.StrictMode>
   </ApolloProvider>,
   document.getElementById('root')
