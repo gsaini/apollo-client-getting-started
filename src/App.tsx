@@ -5,8 +5,12 @@ import './App.css';
 import {
   Link
 } from "react-router-dom";
-
+import { Can } from './rules/Can';
+import { Article } from "./rules/entities";
 function App() {
+
+  const article = new Article({ published: true });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -24,8 +28,9 @@ function App() {
         </a>
         <Link to="/books">Books</Link>
         <Link to="/todos">Todos</Link>
-
-        <ExchangeRates />
+        <Can I="read" a={article}>
+        { () => <ExchangeRates /> }
+        </Can>
       </header>
     </div>
   );

@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_BOOKS, ADD_BOOK } from './gql';
+import { Can } from '@casl/react';
+import ability from './ability';
+import { Author } from '../../rules/entities';
 
 export default function Books() {
   const bookTitle = useRef(null);
@@ -13,7 +16,7 @@ export default function Books() {
 
       cache.writeQuery({
         query: GET_BOOKS,
-        data: { 
+        data: {
           books: [...books, addBook]
         }
       });
@@ -25,12 +28,15 @@ export default function Books() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    addBook({ variables: { title: event.target.title.value, author: event.target.author.value } });
+    const target = event.target;
 
-    event.target.title = '';
-    event.target.author = '';
+    addBook({ variables: { title: target.title.value, author: target.author.value } });
+
+    target.title.value = '';
+    target.author.value = '';
   }
+
+  const author = new Author({ isShowAuthor: data.books.length === 2 });
 
   return (
     <section>
@@ -43,12 +49,17 @@ export default function Books() {
           ))
         }
       </ul>
-      <form onSubmit={(e) => handleSubmit(e)} style={{ display:'flex', flexDirection: 'row' }}>
+      <form onSubmit={(e) => handleSubmit(e)} style={{ display: 'flex', flexDirection: 'row' }}>
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" name="title" ref={bookTitle} />
-        <label htmlFor="author">Book:</label>
-        <input type="text" id="author" name="author" ref={bookAuthor}/>
-        <button type="submit">Submit</button>
+
+          <label htmlFor="author">Book:</label>
+          <input type="text" id="author" name="author" ref={bookAuthor} />
+
+        <Can I="update" a={author} ability={ability}>
+          {() => <button type="submit">Submit</button>}
+        </Can>
+
       </form>
     </section>
   );

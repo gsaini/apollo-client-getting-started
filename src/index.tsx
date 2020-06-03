@@ -7,6 +7,8 @@ import * as serviceWorker from './serviceWorker';
 import client from './apollo/client';
 import Books from './components/Books';
 import Todos from './components/Todos';
+import { AbilityContext } from './rules/Can'
+import ability from './rules/abilityBuilder'
 
 import {
   BrowserRouter as Router,
@@ -16,22 +18,23 @@ import {
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <React.StrictMode>
-      <Router>
-      <Switch>
-        
-        <Route path="/books">
-          <Books />
-        </Route>
-        <Route path="/todos">
-          <Todos />
-        </Route>
-        <Route path="/">
-          <App />
-        </Route>
-      </Switch>
-      </Router>
-    </React.StrictMode>
+    <AbilityContext.Provider value={ability}>
+      <React.StrictMode>
+        <Router>
+          <Switch>
+            <Route path="/books">
+              <Books />
+            </Route>
+            <Route path="/todos">
+              <Todos />
+            </Route>
+            <Route path="/">
+              <App />
+            </Route>
+          </Switch>
+        </Router>
+      </React.StrictMode>
+      </AbilityContext.Provider>
   </ApolloProvider>,
   document.getElementById('root')
 );

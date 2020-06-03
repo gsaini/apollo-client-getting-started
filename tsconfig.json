@@ -21,6 +21,7 @@
     "noImplicitAny": false
   },
   "include": [
-    "src"
+    "src",
+    "@casl/react/contextAPIPatch.d.ts"
   ]
 }
