@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render snapshot 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <header
+      class="App-header"
+    >
+      <img
+        alt="logo"
+        class="App-logo"
+        src="logo.svg"
+      />
+      <p
+        class="paragraph-cls"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ex perferendis maxime voluptatem molestiae? Qui cupiditate asperiores ipsa nesciunt, iusto minima voluptatem alias sit porro sunt ad veritatis reiciendis? Deserunt.
+      </p>
+      <a
+        class="App-link"
+        href="https://reactjs.org"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Learn React
+      </a>
+    </header>
+  </div>
+</div>
+`;
