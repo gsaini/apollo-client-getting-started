@@ -1,14 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
+import {
+  Link
+} from "react-router-dom";
+import { Can } from './rules/Can';
+import { Article } from "./rules/entities";
 import './App.css';
+import { ExchangeRates } from './pages';
 
 function App() {
+  const article = new Article({ published: true });
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p className="paragraph-cls">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ex perferendis maxime voluptatem molestiae? Qui cupiditate asperiores ipsa nesciunt, iusto minima voluptatem alias sit porro sunt ad veritatis reiciendis? Deserunt.</p>
-        <a
+
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p><a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
@@ -16,7 +26,12 @@ function App() {
         >
           Learn React
         </a>
+        <Link to="/todos">Todos</Link>
+        <Can I="read" a={article}>
+          {() => <ExchangeRates />}
+        </Can>
       </header>
+
     </div>
   );
 }

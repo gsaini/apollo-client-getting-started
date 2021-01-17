@@ -5,8 +5,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import client from './apollo/client';
-import Books from './components/Books';
-import Todos from './components/Todos';
+import { Todos } from './pages';
 import { AbilityContext } from './rules/Can'
 import ability from './rules/abilityBuilder'
 
@@ -22,9 +21,6 @@ ReactDOM.render(
       <React.StrictMode>
         <Router>
           <Switch>
-            <Route path="/books">
-              <Books />
-            </Route>
             <Route path="/todos">
               <Todos />
             </Route>
@@ -34,7 +30,7 @@ ReactDOM.render(
           </Switch>
         </Router>
       </React.StrictMode>
-      </AbilityContext.Provider>
+    </AbilityContext.Provider>
   </ApolloProvider>,
   document.getElementById('root')
 );

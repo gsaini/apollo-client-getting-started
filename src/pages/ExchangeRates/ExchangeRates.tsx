@@ -1,8 +1,8 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import {GET_BOOKS} from '../Books/gql';
+import { GET_BOOKS } from '../Books/queries';
 
-export default function ExchangeRates() {
+export const ExchangeRates = () => {
   const { loading, error, data } = useQuery(GET_BOOKS);
 
   if (loading) return <p>Loading...</p>;

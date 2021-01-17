@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_BOOKS, ADD_BOOK } from './gql';
+import { GET_BOOKS, ADD_BOOK } from './queries';
 import { Can } from '@casl/react';
 import ability from './ability';
 import { Author } from '../../rules/entities';
 
-export default function Books() {
+export const Books = () => {
   const bookTitle = useRef(null);
   const bookAuthor = useRef(null);
 
@@ -53,8 +53,8 @@ export default function Books() {
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" name="title" ref={bookTitle} />
 
-          <label htmlFor="author">Book:</label>
-          <input type="text" id="author" name="author" ref={bookAuthor} />
+        <label htmlFor="author">Book:</label>
+        <input type="text" id="author" name="author" ref={bookAuthor} />
 
         <Can I="update" a={author} ability={ability}>
           {() => <button type="submit">Submit</button>}

@@ -1,0 +1,10 @@
+.Todo {
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    padding: 20px;
+  }
+}
