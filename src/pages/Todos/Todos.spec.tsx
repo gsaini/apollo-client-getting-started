@@ -5,7 +5,7 @@ import { axe } from '../../test-utils';
 import { Todos } from './Todos';
 import { GET_TODOS, UPDATE_TODO } from './queries';
 import { todos } from './mocks';
-import { act, fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 
 describe('Todos components', () => {
     const mocks = [{
