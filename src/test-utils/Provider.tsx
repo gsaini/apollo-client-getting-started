@@ -6,9 +6,9 @@ import { cache } from '../apollo';
 
 const customRender = async (
     childComponent: JSX.Element,
-    options: MockedProviderProps
+    options?: MockedProviderProps
 ): Promise<RenderResult> => {
-    const { mocks, resolvers = {} } = options;
+    const { mocks = [], resolvers = {} } = options || {};
     const wrapper = render(<MockedProvider
         mocks={mocks}
         resolvers={resolvers}

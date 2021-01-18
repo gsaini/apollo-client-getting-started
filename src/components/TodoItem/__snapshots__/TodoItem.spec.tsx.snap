@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todos components should render snapshot 1`] = `
+<div>
+  <div
+    class="Todo__item"
+  >
+    <label
+      for="1-checkbox"
+    >
+      lorem ipsum
+    </label>
+    <input
+      id="1-checkbox"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
