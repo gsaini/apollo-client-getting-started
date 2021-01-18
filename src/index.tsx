@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import client from './apollo/client';
+import { client } from './apollo/client';
 import { Todos } from './pages';
 import { AbilityContext } from './rules/Can'
 import ability from './rules/abilityBuilder'

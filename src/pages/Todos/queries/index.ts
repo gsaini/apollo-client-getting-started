@@ -1,2 +1,1 @@
-export * from "./getTodos";
-export * from "./updateTodo";
+export * from "./gql";

@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todos components should render snapshot 1`] = `
+<div>
+  <form
+    class="Todo"
+  >
+    <div
+      class="Todo__list"
+    >
+      <div
+        class="Todo__item"
+      >
+        <label
+          for="1-checkbox"
+        >
+          delectus aut autem
+        </label>
+        <input
+          id="1-checkbox"
+          type="checkbox"
+        />
+      </div>
+      <div
+        class="Todo__item"
+      >
+        <label
+          for="2-checkbox"
+        >
+          quis ut nam facilis et officia qui
+        </label>
+        <input
+          id="2-checkbox"
+          type="checkbox"
+        />
+      </div>
+      <div
+        class="Todo__item"
+      >
+        <label
+          for="3-checkbox"
+        >
+          fugiat veniam minus
+        </label>
+        <input
+          id="3-checkbox"
+          type="checkbox"
+        />
+      </div>
+      <div
+        class="Todo__item"
+      >
+        <label
+          for="4-checkbox"
+        >
+          et porro tempora
+        </label>
+        <input
+          checked=""
+          id="4-checkbox"
+          type="checkbox"
+        />
+      </div>
+      <div
+        class="Todo__item"
+      >
+        <label
+          for="5-checkbox"
+        >
+          laboriosam mollitia et enim quasi adipisci quia provident illum
+        </label>
+        <input
+          id="5-checkbox"
+          type="checkbox"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;
